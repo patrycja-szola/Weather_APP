@@ -11,36 +11,43 @@
       integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="source/style.css" />
+
     <title>Weather App</title>
   </head>
   <body>
-    <div class="container">
-      <h1>Paris</h1>
-      <ul>
-        <li>Sunday 21:00</li>
-        <li>Sunny</li>
-      </ul>
-    </div>
-    <div class="row">
-      <div class="col-6">
-        <img
-          src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-          alt="Sunny"
-        />
-        23 °C|°F
+    <div class="weather-app">
+      <div class="row">
+        <div class="col-6">
+          <h1>Paris</h1>
+          <ul class="weekday">
+            <li>Sunday 21:00</li>
+            <li>Sunny</li>
+          </ul>
+        </div>
+        <div class="col-6">
+          <img
+            src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+            alt="Sunny"
+          />
+          <span class="temp">23 °C | °F </span>
+        </div>
       </div>
-      <div class="col-6">
-        <ul>
-          <li>Percipitation: 0%</li>
-          <li>Humidity: 49%</li>
-          <li>Wind: 10km/h</li>
-        </ul>
+      <div class="row">
+        <div class="col-6"></div>
+        <div class="col-6">
+          <ul class="details">
+            <li>Percipitation: 0%</li>
+            <li>Humidity: 49%</li>
+            <li>Wind: 10km/h</li>
+          </ul>
+        </div>
+        <small
+          ><a href="https://github.com/szyszka212/Weather_APP" target="_blank">
+            Open-source code </a
+          >by Pati_</small
+        >
       </div>
-      <small
-        ><a href="https://github.com/szyszka212/Vanilla-Weather-App">
-          Open-source code </a
-        >by Pati_</small
-      >
     </div>
     <script src="source/app.js"></script>
   </body>
