@@ -16,38 +16,43 @@
     <title>Weather App</title>
   </head>
   <body>
-    <div class="weather-app">
-      <div class="row">
-        <div class="col-6">
-          <h1>Paris</h1>
-          <ul class="weekday">
-            <li>Sunday 21:00</li>
-            <li>Sunny</li>
-          </ul>
-        </div>
-        <div class="col-6">
-          <img
-            src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-            alt="Sunny"
-          />
-          <span class="temp">23 °C | °F </span>
+    <div class="main-border">
+      <div class="weather-app">
+        <div class="row">
+          <div class="col-6">
+            <h1>Paris</h1>
+            <ul class="weekday">
+              <li>Sunday 21:00</li>
+              <li>Sunny</li>
+            </ul>
+          </div>
+          <div class="col-6">
+            <div class="d-flex weather-temperature">
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                alt="Sunny"
+                id="icon"
+              />
+              <div>
+                <strong id="temperature">23</strong
+                ><span class="units">
+                  <a href="">°C</a> | <a href="">°F</a>
+                </span>
+                <ul class="details">
+                  <li>Percipitation: 0%</li>
+                  <li>Humidity: 49%</li>
+                  <li>Wind: 10km/h</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-6"></div>
-        <div class="col-6">
-          <ul class="details">
-            <li>Percipitation: 0%</li>
-            <li>Humidity: 49%</li>
-            <li>Wind: 10km/h</li>
-          </ul>
-        </div>
-        <small
-          ><a href="https://github.com/szyszka212/Weather_APP" target="_blank">
-            Open-source code </a
-          >by Pati_</small
-        >
-      </div>
+      <small
+        ><a href="https://github.com/szyszka212/Weather_APP" target="_blank">
+          Open-source code </a
+        >by Pati_</small
+      >
     </div>
     <script src="source/app.js"></script>
   </body>

@@ -2,18 +2,6 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: darkolivegreen;
 }
-.weather-app {
-  background-color: beige;
-  max-width: 600px;
-  margin: 30px auto;
-  padding: 20px;
-  border: 1px dotted grey;
-  border-radius: 5px;
-}
-.temp {
-  color: olive;
-  font-size: 35px;
-}
 
 h1 {
   color: darkolivegreen;
@@ -34,4 +22,33 @@ li {
   font-weight: 450;
   line-height: 28px;
   text-align: left;
+}
+
+.main-border {
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.weather-app {
+  background-color: beige;
+  padding: 20px;
+  border: 1px dotted grey;
+  border-radius: 5px;
+}
+
+.weather-temperature img {
+  margin-right: 10px;
+  height: 70px;
+  width: 70px;
+}
+.weather-temperature #temperature {
+  font-size: 40px;
+  font-weight: 750;
+}
+
+.weather-temperature .units {
+  color: olive;
+  font-size: 18px;
+  position: relative;
+  top: -16px;
 }
