@@ -11,6 +11,7 @@
       integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="source/style.css" />
 
     <title>Weather App</title>
@@ -20,10 +21,13 @@
       <div class="weather-app">
         <div class="row">
           <div class="col-6">
-            <h1>Paris</h1>
-            <ul class="weekday">
-              <li>Sunday 21:00</li>
-              <li>Sunny</li>
+            <h1 id="city"></h1>
+            <ul>
+              <li>
+                Weather details updated: <br /><strong
+                  ><span id="dayTime"></span
+                ></strong>
+              </li>
             </ul>
           </div>
           <div class="col-6">
@@ -34,14 +38,15 @@
                 id="icon"
               />
               <div>
-                <strong id="temperature">23</strong
+                <strong id="temperature"></strong
                 ><span class="units">
                   <a href="">°C</a> | <a href="">°F</a>
                 </span>
-                <ul class="details">
-                  <li>Percipitation: 0%</li>
-                  <li>Humidity: 49%</li>
-                  <li>Wind: 10km/h</li>
+                <ul>
+                  <li id="description"></li>
+                  <li>Pressure: <span id="pressure"></span> hPa</li>
+                  <li>Humidity: <span id="humidity"></span>%</li>
+                  <li>Wind: <span id="wind"></span> km/h</li>
                 </ul>
               </div>
             </div>

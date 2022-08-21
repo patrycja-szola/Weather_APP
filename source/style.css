@@ -24,9 +24,12 @@ li {
   line-height: 28px;
   text-align: left;
 }
+li:first-letter {
+  text-transform: capitalize;
+}
 
 .main-border {
-  max-width: 600px;
+  max-width: 900px;
   margin: 30px auto;
 }
 
@@ -54,4 +57,8 @@ li {
   font-size: 18px;
   position: relative;
   top: -30px;
+}
+#description {
+  font-weight: 700;
+  font-style: italic;
 }
