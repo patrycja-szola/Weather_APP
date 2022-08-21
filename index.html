@@ -19,9 +19,39 @@
   <body>
     <div class="main-border">
       <div class="weather-app">
+        <form id="search-form">
+          <div class="row container1">
+            <div class="col-8 enterCity">
+              <input
+                type="text"
+                id="selected-city"
+                placeholder="enter the city"
+              />
+              <div class="col-2">
+                <button
+                  type="button"
+                  id="findButton"
+                  value="Find"
+                  class="findButton"
+                >
+                  Find
+                </button>
+              </div>
+              <div class="col-2">
+                <button
+                  type="button"
+                  id="currentLocationButton"
+                  class="findButton"
+                >
+                  Current Location
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
         <div class="row">
           <div class="col-6">
-            <h1 id="city"></h1>
+            <h1><span id="choosen-city"></span>, <span id="country"></span></h1>
             <ul>
               <li>
                 Weather details updated: <br /><strong
@@ -46,7 +76,7 @@
                   <li id="description"></li>
                   <li>Pressure: <span id="pressure"></span> hPa</li>
                   <li>Humidity: <span id="humidity"></span>%</li>
-                  <li>Wind: <span id="wind"></span> km/h</li>
+                  <li>Wind speed: <span id="wind"></span> km/h</li>
                 </ul>
               </div>
             </div>

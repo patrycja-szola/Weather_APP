@@ -29,12 +29,12 @@ li:first-letter {
 }
 
 .main-border {
-  max-width: 900px;
+  max-width: 750px;
   margin: 30px auto;
 }
 
 .weather-app {
-  background-color: beige;
+  background-color: khaki;
   padding: 20px;
   border: 1px dotted grey;
   border-radius: 5px;
@@ -61,4 +61,25 @@ li:first-letter {
 #description {
   font-weight: 700;
   font-style: italic;
+}
+.container1 {
+  padding: 10px;
+  margin: 10px 20px 10px 20px;
+}
+.container2 {
+  padding: 10px;
+  margin: 10px 20px 10px 20px;
+}
+.findButton {
+  margin: 10px;
+  background-color: darkolivegreen;
+  color: white;
+  border: 3px solid darkolivegreen;
+  border-radius: 10px;
+}
+.findButton:hover {
+  color: darkolivegreen;
+  background-color: white;
+  border: 3px solid darkolivegreen;
+  cursor: pointer;
 }
