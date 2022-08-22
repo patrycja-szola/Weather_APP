@@ -30,7 +30,6 @@ let units = "metric";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?units=${units}&appid=${apiKey}`;
 
 function showTemperature(response) {
-  console.log(response.data);
   let cityElement = document.querySelector("#choosen-city");
   let countryElement = document.querySelector("#country");
   let descriptionElement = document.querySelector("#description");
@@ -50,16 +49,7 @@ function showTemperature(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
 
-  // Changing background color depending on weather description
-
-  let weatherDescription = response.data.weather[0].description;
-  if (weatherDescription.includes("overcast" || "Overcast")) {
-    document.querySelector(".weather-app").style.backgroundColor = "grey";
-  } else if (weatherDescription.includes("broken" || "Broken")) {
-    document.querySelector(".weather-app").style.backgroundColor = "lightgrey";
-  } else {
-    document.querySelector(".weather-app").style.backgroundColor = "lightblue";
-  }
+  celciusTemp = Math.round(response.data.main.temp);
 
   //Putting weather icon depending on weather description
 
@@ -69,8 +59,6 @@ function showTemperature(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
-
-axios.get(apiUrl).then(showTemperature);
 
 // Weather API - based on current GPS location
 
@@ -106,6 +94,33 @@ function findAlert(event) {
   newCity.innerHTML = `${city.value}`;
   axios.get(`${apiUrl}&q=${city.value}`).then(showTemperature);
 }
+
+// Converting Celcius to Fahrenheit
+
+function displayFarenheitTemperature(event) {
+  event.preventDefault();
+  celciusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemp = (celciusTemp * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+}
+
+function displayCelciusTemperature(event) {
+  event.preventDefault();
+  fahrenheitLink.classList.remove("active");
+  celciusLink.classList.add("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celciusTemp);
+}
+
+let celciusTemp = null;
+
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", displayCelciusTemperature);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFarenheitTemperature);
 
 let citySearch = document.querySelector("#findButton");
 citySearch.addEventListener("click", findAlert);

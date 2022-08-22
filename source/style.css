@@ -58,6 +58,17 @@ li:first-letter {
   position: relative;
   top: -30px;
 }
+.weather-temperature .active {
+  color: darkblue;
+  cursor: default;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
+
 #description {
   font-weight: 700;
   font-style: italic;
