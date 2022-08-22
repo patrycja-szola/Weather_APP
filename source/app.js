@@ -1,3 +1,5 @@
+// Formating weekday & time
+
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let days = [
@@ -47,6 +49,20 @@ function showTemperature(response) {
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+
+  // Changing background color depending on weather description
+
+  let weatherDescription = response.data.weather[0].description;
+  if (weatherDescription.includes("overcast" || "Overcast")) {
+    document.querySelector(".weather-app").style.backgroundColor = "grey";
+  } else if (weatherDescription.includes("broken" || "Broken")) {
+    document.querySelector(".weather-app").style.backgroundColor = "lightgrey";
+  } else {
+    document.querySelector(".weather-app").style.backgroundColor = "lightblue";
+  }
+
+  //Putting weather icon depending on weather description
+
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -55,6 +71,8 @@ function showTemperature(response) {
 }
 
 axios.get(apiUrl).then(showTemperature);
+
+// Weather API - based on current GPS location
 
 function showPosition(position) {
   let lat = position.coords.latitude;
@@ -77,6 +95,8 @@ let defaultCity = "Tczew";
 let newCity = document.querySelector("#choosen-city");
 newCity.innerHTML = defaultCity;
 axios.get(`${apiUrl}&q=${defaultCity}`).then(showTemperature);
+
+// Actions for "Search / Current Location" buttons
 
 function findAlert(event) {
   event.preventDefault();

@@ -1,14 +1,14 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: darkolivegreen;
+  background-color: white;
 }
 
 h1 {
-  color: darkolivegreen;
-  font-size: 55px;
+  color: midnightblue;
+  font-size: 50px;
   font-weight: 900;
   line-height: 28px;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
 }
 ul,
 li {
@@ -18,7 +18,7 @@ li {
 li {
   list-style: none;
   margin: 0;
-  color: olive;
+  color: black;
   font-size: 18px;
   font-weight: 450;
   line-height: 28px;
@@ -29,21 +29,21 @@ li:first-letter {
 }
 
 .main-border {
-  max-width: 750px;
+  max-width: 950px;
   margin: 30px auto;
 }
 
 .weather-app {
-  background-color: khaki;
+  background-color: lightblue;
   padding: 20px;
-  border: 1px dotted grey;
+  border: 1px dotted blue;
   border-radius: 5px;
 }
 
 .weather-temperature img {
   margin-right: 10px;
-  height: 70px;
-  width: 70px;
+  height: 75px;
+  width: 75px;
 }
 .weather-temperature #temperature {
   font-size: 60px;
@@ -79,8 +79,6 @@ li:first-letter {
   border-radius: 10px;
 }
 .findButton:hover {
-  color: darkolivegreen;
-  background-color: white;
   border: 3px solid darkolivegreen;
   cursor: pointer;
 }
