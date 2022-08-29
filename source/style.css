@@ -1,6 +1,8 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: url("https://wallpaperaccess.com/full/3503177.jpg") no-repeat;
+  /*  background: url("https://wallpaperaccess.com/full/3503177.jpg") no-repeat; */
+  background: url("https://images.wallpapersden.com/image/download/forest-mountains-sunset-cool-weather-minimalism_am5oZWuUmZqaraWkpJRobWllrWdma2U.jpg")
+    no-repeat;
   background-position: left top;
   background-size: cover;
   background-color: black;
@@ -37,7 +39,7 @@ li:first-letter {
   margin: 0 auto;
   opacity: 0.65;
   position: center bottom;
-  margin-top: 10%;
+  margin-top: 15%;
   margin-bottom: 10%;
 }
 
