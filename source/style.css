@@ -103,3 +103,26 @@ li:first-letter {
   border: 3px solid darkolivegreen;
   cursor: pointer;
 }
+
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+  color: black;
+}
+
+.weather-fcst-date {
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+.weather-fcst-temperature {
+  font-size: 13px;
+}
+
+.weather-fcst-temperature-max {
+  font-weight: 750;
+}
+
+.weather-fcst-temperature-min {
+  opacity: 0.5;
+}
