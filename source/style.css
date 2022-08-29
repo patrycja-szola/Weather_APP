@@ -5,7 +5,7 @@ body {
     no-repeat;
   background-position: left top;
   background-size: cover;
-  background-color: black;
+  background-color: #0a131c;
 }
 
 h1 {
@@ -125,4 +125,7 @@ li:first-letter {
 
 .weather-fcst-temperature-min {
   opacity: 0.5;
+}
+.footer {
+  color: white;
 }

@@ -23,36 +23,57 @@ function formatDate(timestamp) {
   return `${weekday}, ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = ` <div class="row">`;
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
               <div class="col-2">
-                <div class="weather-fcst-date">${day}</div>
+                <div class="weather-fcst-date">${formatDay(
+                  forecastDay.dt
+                )}</div>
                 <br />
                 <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-                  alt="Sunny"
+                  src="http://openweathermap.org/img/wn/${
+                    forecastweather[0].icon
+                  }@2x.png"
                   id="icon_fcst"
                   width="50"
                 />
                 <div class="weather-fcst-temperature">
-                  <span class="weather-fcst-temperature-max"> 18°C</span
-                  ><span class="weather-fcst-temperature-min"> 12°C </span>
+                  <span class="weather-fcst-temperature-max"> ${Math.round(
+                    forecastDay.temp.max
+                  )}°C</span
+                  ><span class="weather-fcst-temperature-min">${Math.round(
+                    forecastDay.temp.min
+                  )}°C </span>
                 </div>
               </div>
             `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
-
   forecastElement.innerHTML = forecastHTML;
 }
 
 // Weather API
+
+function getFcst(coordinates) {
+  let apiKey2 = "cef79dbf08f89ea939ac40336ad93e7c";
+  let apiURL2 = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey2}&units=metric`;
+  axios.get(apiURL2).then(displayForecast);
+}
 
 let apiKey = "1a503fb7a97ad8050479d85fae658043";
 let units = "metric";
@@ -87,6 +108,8 @@ function showTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getFcst(response.data.coord);
 }
 
 // Weather API - based on current GPS location
@@ -144,7 +167,6 @@ function displayCelciusTemperature(event) {
 }
 
 let celciusTemp = null;
-displayForecast();
 
 let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", displayCelciusTemperature);
