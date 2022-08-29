@@ -23,6 +23,35 @@ function formatDate(timestamp) {
   return `${weekday}, ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = ` <div class="row">`;
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+              <div class="col-2">
+                <div class="weather-fcst-date">${day}</div>
+                <br />
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                  alt="Sunny"
+                  id="icon_fcst"
+                  width="50"
+                />
+                <div class="weather-fcst-temperature">
+                  <span class="weather-fcst-temperature-max"> 18°C</span
+                  ><span class="weather-fcst-temperature-min"> 12°C </span>
+                </div>
+              </div>
+            `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
 // Weather API
 
 let apiKey = "1a503fb7a97ad8050479d85fae658043";
@@ -115,6 +144,7 @@ function displayCelciusTemperature(event) {
 }
 
 let celciusTemp = null;
+displayForecast();
 
 let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", displayCelciusTemperature);
