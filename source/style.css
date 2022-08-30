@@ -9,10 +9,12 @@ body {
 }
 
 h1 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+
   color: midnightblue;
-  font-size: 50px;
+  font-size: 80px;
   font-weight: 900;
-  line-height: 28px;
+  line-height: 50px;
   padding-bottom: 15px;
 }
 ul,

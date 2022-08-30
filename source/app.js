@@ -70,12 +70,12 @@ function displayForecast(response) {
 // Weather API
 
 function getFcst(coordinates) {
-  let apiKey2 = "1a503fb7a97ad8050479d85fae658043";
+  let apiKey2 = "cef79dbf08f89ea939ac40336ad93e7c";
   let apiURL2 = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey2}&units=metric`;
   axios.get(apiURL2).then(displayForecast);
 }
 
-let apiKey = "1a503fb7a97ad8050479d85fae658043";
+let apiKey = "cef79dbf08f89ea939ac40336ad93e7c";
 let units = "metric";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?units=${units}&appid=${apiKey}`;
 
