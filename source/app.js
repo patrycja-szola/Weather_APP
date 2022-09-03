@@ -58,7 +58,8 @@ function displayForecast(response) {
                   )}°C   /  </span
                   ><span class="weather-fcst-temperature-min">${Math.round(
                     forecastDay.temp.min
-                  )}°C </span>
+                  )}°C<br /> </span>
+                  <br />
                 </div>
               </div>
             `;
