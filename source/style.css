@@ -41,7 +41,7 @@ li:first-letter {
   margin: 0 auto;
   opacity: 0.65;
   position: center bottom;
-  margin-top: 15%;
+  margin-top: 10%;
   margin-bottom: 10%;
 }
 
@@ -115,6 +115,7 @@ li:first-letter {
 .weather-fcst-date {
   font-size: 16px;
   opacity: 0.5;
+  font-weight: 800;
 }
 
 .weather-fcst-temperature {

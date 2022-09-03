@@ -40,21 +40,22 @@ function displayForecast(response) {
         forecastHTML +
         `
               <div class="col-2">
+              <br />
                 <div class="weather-fcst-date">${formatDay(
                   forecastDay.dt
                 )}</div>
-                <br />
+              
                 <img
                   src="http://openweathermap.org/img/wn/${
-                    forecastweather[0].icon
+                    forecastDay.weather[0].icon
                   }@2x.png"
                   id="icon_fcst"
-                  width="50"
+                  width="70"
                 />
                 <div class="weather-fcst-temperature">
                   <span class="weather-fcst-temperature-max"> ${Math.round(
                     forecastDay.temp.max
-                  )}°C</span
+                  )}°C   /  </span
                   ><span class="weather-fcst-temperature-min">${Math.round(
                     forecastDay.temp.min
                   )}°C </span>
@@ -70,12 +71,12 @@ function displayForecast(response) {
 // Weather API
 
 function getFcst(coordinates) {
-  let apiKey2 = "cef79dbf08f89ea939ac40336ad93e7c";
-  let apiURL2 = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey2}&units=metric`;
+  let apiKey2 = "2980ff43226d67e53abfcdb6d457dcc8";
+  let apiURL2 = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey2}&units=metric`;
   axios.get(apiURL2).then(displayForecast);
 }
 
-let apiKey = "cef79dbf08f89ea939ac40336ad93e7c";
+let apiKey = "2980ff43226d67e53abfcdb6d457dcc8";
 let units = "metric";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?units=${units}&appid=${apiKey}`;
 
@@ -140,6 +141,8 @@ axios.get(`${apiUrl}&q=${defaultCity}`).then(showTemperature);
 
 function findAlert(event) {
   event.preventDefault();
+  fahrenheitLink.classList.remove("active");
+  celciusLink.classList.add("active");
 
   let city = document.querySelector("#selected-city");
   let newCity = document.querySelector("#choosen-city");
